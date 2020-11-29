@@ -1,0 +1,4 @@
+Ce qui est travaillé spécifiquement dans ce projet :
+- Methodes personnalisées dans modèle : Permettent d'utiliser l'objet modèle pour y inclure les methodes (calcul du ratio Covid Décès / Codiv Positifs)
+
+

@@ -1,0 +1,2 @@
+def ApiGet():
+    print("hi")
