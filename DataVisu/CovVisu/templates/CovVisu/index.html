@@ -26,29 +26,30 @@ function drawStacked() {
       data.addColumn('number', 'Décès');
 
       data.addRows([
-        [{v: '{{ context.0.0 }}', f: '{{ context.0.0 }}'}, {{ context.0.2 }}, {{ context.0.1 }}],
-        [{v: '{{ context.1.0 }}', f: '{{ context.1.0 }}'}, {{ context.1.2 }}, {{ context.1.1 }}],
-        [{v: '{{ context.2.0 }}', f:'{{ context.2.0 }}'}, {{ context.2.2 }}, {{ context.2.1 }}],
-        [{v: '{{ context.3.0 }}', f: '{{ context.3.0 }}'}, {{ context.3.2 }}, {{ context.3.1 }}],
-        [{v: '{{ context.4.0 }}', f: '{{ context.4.0 }}'}, {{ context.4.2 }}, {{ context.4.1 }}],
-        [{v: '{{ context.5.0 }}', f: '{{ context.5.0 }}'}, {{ context.5.2 }}, {{ context.5.1 }}],
-        [{v: '{{ context.6.0 }}', f: '{{ context.6.0 }}'}, {{ context.6.2 }}, {{ context.6.1 }}],
-        [{v: '{{ context.7.0 }}', f: '{{ context.7.0 }}'}, {{ context.7.2 }}, {{ context.7.1 }}],
-        [{v: '{{ context.8.0 }}', f: '{{ context.8.0 }}'}, {{ context.8.2 }}, {{ context.8.1 }}],
-        [{v: '{{ context.9.0 }}', f: '{{ context.9.0 }}'}, {{ context.9.2 }}, {{ context.9.1 }}],
+        [{v: '', f: '{{ context.0.0 }}'}, {{ context.0.2 }}, {{ context.0.1 }}],
+        [{v: '', f: '{{ context.1.0 }}'}, {{ context.1.2 }}, {{ context.1.1 }}],
+        [{v: '', f:'{{ context.2.0 }}'}, {{ context.2.2 }}, {{ context.2.1 }}],
+        [{v: '', f: '{{ context.3.0 }}'}, {{ context.3.2 }}, {{ context.3.1 }}],
+        [{v: '', f: '{{ context.4.0 }}'}, {{ context.4.2 }}, {{ context.4.1 }}],
+        [{v: '', f: '{{ context.5.0 }}'}, {{ context.5.2 }}, {{ context.5.1 }}],
+        [{v: '', f: '{{ context.6.0 }}'}, {{ context.6.2 }}, {{ context.6.1 }}],
+        [{v: '', f: '{{ context.7.0 }}'}, {{ context.7.2 }}, {{ context.7.1 }}],
+        [{v: '', f: '{{ context.8.0 }}'}, {{ context.8.2 }}, {{ context.8.1 }}],
+        [{v: '', f: '{{ context.9.0 }}'}, {{ context.9.2 }}, {{ context.9.1 }}],
       ]);
 
       var options = {
         title: 'Nombre de décès et nouveaux cas ces derniers jours',
         isStacked: true,
         hAxis: {
-          title: 'Time of Day',
-          format: 'h:mm a',
+          title: 'Date',
+          format: 'yyyy-mm-dd',
           viewWindow: {
-            min: [7, 30, 0],
-            max: [17, 30, 0]
+            min: [],
+            max: []
           }
         },
+        height: 900,
         vAxis: {
           title: 'Nombre'
         }

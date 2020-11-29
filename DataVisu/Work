@@ -3,3 +3,4 @@ Ce qui est travaillé spécifiquement dans ce projet :
 - Récupération et traitement d'infos d'une API (j'ai bien tout segmenter pour la compréhension)
 - Production de graphs avec google charts (possibilité / nécessité de refactorer tout ca)
 
+ToDo : mettre un index au dico pour renverser l'affichage
