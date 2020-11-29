@@ -48,7 +48,7 @@ def applicationCalcul(objetTransitionnelPostDigest):
 
             #print("Date : " + str(objetATravailler[n]["date"]) + " Décès :" + str(objetATravailler[n]["new_deaths"]) + " Nouveaux cas :" + str(
             #    objetATravailler[n]["new_confirmed"]))
-            dicoToGive[n]=[objetATravailler[n]["date"],objetATravailler[n]["new_deaths"], objetATravailler[n]["new_confirmed"]]
+            dicoToGive[n]=[str(objetATravailler[n]["date"]),objetATravailler[n]["new_deaths"], objetATravailler[n]["new_confirmed"]]
             n+=1
     print(dicoToGive)
     return dicoToGive

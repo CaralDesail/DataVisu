@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-Hello <br>
-{{ context }} /\
+<h2>Evolution coronavirus des derniers jours</h2><br>
+
+
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div"></div>
+
+
+<script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawStacked);
+
+function drawStacked() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Day');
+      data.addColumn('number', 'Cas');
+      data.addColumn('number', 'Décès');
+
+      data.addRows([
+        [{v: '{{ context.0.0 }}', f: '{{ context.0.0 }}'}, {{ context.0.2 }}, {{ context.0.1 }}],
+        [{v: '{{ context.1.0 }}', f: '{{ context.1.0 }}'}, {{ context.1.2 }}, {{ context.1.1 }}],
+        [{v: '{{ context.2.0 }}', f:'{{ context.2.0 }}'}, {{ context.2.2 }}, {{ context.2.1 }}],
+        [{v: '{{ context.3.0 }}', f: '{{ context.3.0 }}'}, {{ context.3.2 }}, {{ context.3.1 }}],
+        [{v: '{{ context.4.0 }}', f: '{{ context.4.0 }}'}, {{ context.4.2 }}, {{ context.4.1 }}],
+        [{v: '{{ context.5.0 }}', f: '{{ context.5.0 }}'}, {{ context.5.2 }}, {{ context.5.1 }}],
+        [{v: '{{ context.6.0 }}', f: '{{ context.6.0 }}'}, {{ context.6.2 }}, {{ context.6.1 }}],
+        [{v: '{{ context.7.0 }}', f: '{{ context.7.0 }}'}, {{ context.7.2 }}, {{ context.7.1 }}],
+        [{v: '{{ context.8.0 }}', f: '{{ context.8.0 }}'}, {{ context.8.2 }}, {{ context.8.1 }}],
+        [{v: '{{ context.9.0 }}', f: '{{ context.9.0 }}'}, {{ context.9.2 }}, {{ context.9.1 }}],
+      ]);
+
+      var options = {
+        title: 'Nombre de décès et nouveaux cas ces derniers jours',
+        isStacked: true,
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Nombre'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+</script>
+
 
 </body>
 </html>
