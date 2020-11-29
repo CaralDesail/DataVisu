@@ -25,7 +25,8 @@ def apiGenericProcess():
 
 
 def ResultGrab():
-    response = requests.get("http://corona-api.com/countries/FR")
+    url="http://corona-api.com/countries/FR"
+    response = requests.get(url)
     if response.status_code != 200:
         print("Erreur : " + str(response.status_code))
     else:
